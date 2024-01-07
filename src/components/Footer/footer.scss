@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 209px;
+  width: 100%;
+  background: black;
+}
+.logo_footer {
+    width: 170px;
+}
+.copyright {
+  text-align: center;
+  word-wrap: normal;
+  color: white;
+  font-family: Montserrat, sans-serif;
+}
