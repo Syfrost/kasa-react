@@ -1,0 +1,44 @@
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 25px 0 25px;
+  box-sizing: border-box;
+  .header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 68px;
+    max-width: 1240px;
+    width: 100%;
+  }
+  .header_logo {
+    height: 68px;
+  }
+  .header_nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px;
+    li a{
+      text-decoration: none;
+      color: #FF6060;
+      text-align: right;
+      font-family: Montserrat, sans-serif;
+      font-size: 24px;
+    }
+    a:hover {
+        color: #FF6060;
+        text-decoration: underline;
+    }
+    a.active {
+        color: #FF6060;
+        text-decoration: underline;
+    }
+  }
+}
