@@ -18,8 +18,8 @@ const Dropdown = ({ title, content }) => {
     );
 
     return (
-        <>
-            <button className="dropdown" type="button" onClick={toggleDropdown}>
+        <div className={'dropdown'}>
+            <button className="dropdown__btn" type="button" onClick={toggleDropdown}>
                 {title}
                 {isOpen ? <UpArrowIcon /> : <DownArrowIcon />}
             </button>
@@ -31,7 +31,7 @@ const Dropdown = ({ title, content }) => {
                     }
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

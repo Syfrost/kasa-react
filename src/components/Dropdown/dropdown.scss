@@ -1,0 +1,37 @@
+.dropdown {
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #FF6060;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FFF;
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    z-index: 2;
+  }
+  &__content {
+    padding: 20px;
+    background-color: #F6F6F6;
+    margin-top: -7px;
+    z-index: 1;
+    border-radius: 0 5px 0 5px;
+    li {
+      list-style: none;
+      margin-bottom: 7px;
+    }
+    li,p{
+      color: #FF6060;
+      font-family: Montserrat, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
