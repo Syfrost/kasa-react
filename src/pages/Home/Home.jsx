@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AccommodationCard from "../../components/AccommodationCard/AccommodationCard.jsx";
 import sea_asset from "../../assets/sea_asset.jpg";
 import "./home.scss";
+import BannerPicture from "../../components/BannerPicture/BannerPicture.jsx";
 export default function Home() {
 
     const [accommodations, setAccommodations] = useState([]);
@@ -17,8 +18,7 @@ export default function Home() {
         <>
             <main className="home">
                 <section className="home__presentation">
-                <img className="home__presentation__picture" src={sea_asset} alt="sea and mountain"/>
-                    <p className="home__presentation__picture__text">Chez vous, partout et ailleurs</p>
+                    <BannerPicture imageName={"sea_asset.jpg"} pictureText={"Chez vous, partout et ailleurs"} alt={"vu mer et forêt"}/>
                 </section>
                 <section className="home__accommodation">
                     {accommodations.map(accommodation => (

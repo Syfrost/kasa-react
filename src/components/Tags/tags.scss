@@ -4,6 +4,8 @@
   flex-direction: row;
   justify-content: flex-start;
   column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
   &__element {
     background-color: $color-primary;
     border-radius: 10px;

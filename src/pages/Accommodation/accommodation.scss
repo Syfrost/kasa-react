@@ -1,13 +1,156 @@
 @import "@styles/_variables";
-main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-} //todo : mettre en style general
 
-.accommodation__info {
+.accommodation {
   width: 100%;
   max-width: 1440px;
-  padding: 50px 100px 50px 100px;
-  box-sizing: border-box;
+  &__pictures {
+    width: 100%;
+    max-width: 1440px;
+    //padding: 50px 100px 50px 100px;
+    box-sizing: border-box;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    //padding: 0 100px 50px 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &__title {
+      color: #FF6060;
+      font-family: Montserrat, sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+    }
+
+    &__subtitle {
+      color: #FF6060;
+      font-family: Montserrat, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    &__description { //style d'affichage des dropdown
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 1440px;
+        column-gap: 7%;
+        justify-content: space-between;
+        padding-top: 24px;
+        box-sizing: border-box;
+        .dropdown {
+          width: 50%;
+        }
+    }
+  }
+  .tags {
+    padding-top: 20px;
+    &__element {
+    }
+  }
+  .star {
+    width: 32px;
+    height: 32px;
+  }
+
+  .info-section {
+    padding-top: 24px;
+    flex-direction: column-reverse !important;
+  }
+
+  .info-section:first-child {
+    flex-grow: 1; // espace disponible
+    flex-wrap: wrap;
+  }
+
+  .info-section:last-child {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-grow: 0; // uniquement l'espace nécessaire pour son contenu
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .accommodation {
+    .accommodation__info {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        font-size: 18px;
+      }
+
+      &__subtitle {
+        font-size: 14px;
+      }
+    }
+    .tags {
+      padding-top: 10px;
+      .tags__element {
+        font-size: 10px;
+      }
+    }
+
+    .info-section {
+      padding-top: 15px;
+      flex-direction: row !important;
+    }
+    .info-section:last-child {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .accommodation__info__description {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      width: 100%;
+      padding-top: 15px;
+
+      .dropdown {
+        width: 100%;
+      }
+    }
+
+    .name-container {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+    }
+
+    .stars-rating .star {
+      width: 15px;
+      height: 15px;
+    }
+    .host-container {
+      .host__name__firstname,
+      .host__name__lastname {
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      .host__picture {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .dropdown {
+      &__btn {
+        font-size: 13px;
+      }
+      &__arrow {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
 }

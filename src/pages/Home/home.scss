@@ -1,3 +1,4 @@
+@import "@styles/_variables";
 .home {
   padding: 50px 100px 50px 100px;
   box-sizing: border-box;
@@ -8,51 +9,12 @@
   justify-content: center;
   flex-direction: column;
 
-  &__presentation {
-    display: flex;
-    position: relative;
-    border-radius: 25px;
-    width: 100%;
-    max-width: 1240px;
-    height: 223px;
-    overflow: hidden;
-
-    &__picture {
-      object-fit: cover;
-      box-sizing: border-box;
-      width: 100%;
-      z-index: 1;
-
-      &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        text-align: center;
-        color: #FFF;
-        font-family: Montserrat, sans-serif;
-        font-size: 48px;
-        font-weight: 500;
-        z-index: 3;
-      }
-    }
-  }
-
-  &__presentation::after { // This is the pseudo-element that will create the light black overlay on top of the image
-    content: '';
-    position: absolute;
-    background: rgb(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
   &__accommodation {
     display: grid;
     max-width: 1240px;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px;// Ajustez la taille minimale selon vos besoins
-    gap: 20px; // Espace entre les cartes
+    grid-auto-rows: 250px;
+    gap: 20px;
     border-radius: 25px;
     margin-top: 43px;
     background: #F6F6F6;

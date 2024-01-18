@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import "./accommodation.scss";
 import Tags from "../../components/Tags/Tags.jsx";
 import Dropdown from "../../components/Dropdown/Dropdown.jsx";
@@ -9,6 +9,8 @@ import Carousel from "../../components/Carousel/Carousel.jsx";
 export default function Accommodation() {
     let { id } = useParams();
     const [accommodation, setAccommodation] = useState(null);
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch("/logements.json")
@@ -21,23 +23,35 @@ export default function Accommodation() {
             .catch(error => console.error("Erreur de chargement des logements", error));
     }, [id]); // Dépendance à l'ID pour recharger si l'ID change
 
-    if (!accommodation) {
+    if (accommodation === null) {
         return <div>Chargement en cours...</div>;
     }
 
+    if (accommodation === undefined) {
+        return navigate('/paindemie');
+    }
+
     return (
-        <>
+        <div className={'accommodation'}>
+            <section className="accommodation__pictures">
+                <Carousel pictures={accommodation.pictures}/>
+            </section>
+
             <section className="accommodation__info">
-                <Carousel pictures={accommodation.pictures} />
-                <h1 className="accommodation__info__title">{accommodation.title}</h1>
-                <h2 className="accommodation__info__subtitle">{accommodation.location}</h2>
-                <Tags tagsList={accommodation.tags}/>
-                {/*<StarsRating rating="3"/>*/}
-                <StarsRating rating={accommodation.rating}/>
-                <Host name={accommodation.host.name} picture={accommodation.host.picture}/>
+                <div className="info-section">
+                    <h1 className="accommodation__info__title">{accommodation.title}</h1>
+                    <h2 className="accommodation__info__subtitle">{accommodation.location}</h2>
+                    <Tags tagsList={accommodation.tags}/>
+                </div>
+                <div className="info-section">
+                    <StarsRating rating={accommodation.rating}/>
+                    <Host name={accommodation.host.name} picture={accommodation.host.picture}/>
+                </div>
+            </section>
+            <article className={'accommodation__info__description'}>
                 <Dropdown title={"Description"} content={accommodation.description}/>
                 <Dropdown title={"Équipements"} content={accommodation.equipments}/>
-            </section>
-        </>
-    )
+            </article>
+        </div>
+)
 }
