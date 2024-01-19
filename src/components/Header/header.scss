@@ -30,7 +30,8 @@ header {
       color: #FF6060;
       text-align: right;
       font-family: Montserrat, sans-serif;
-      font-size: 24px;
+      white-space: nowrap;
+      font-size: clamp(12px, 3vw, 24px);
     }
     a:hover {
         color: #FF6060;
@@ -39,6 +40,25 @@ header {
     a.active {
         color: #FF6060;
         text-decoration: underline;
+    }
+  }
+}
+
+//768PX MEDIA QUERY
+@media (max-width: 768px) {
+  header {
+    .header_container {
+      display: flex;
+      justify-content: space-between;
+      .header_logo {
+        width: clamp(145px, 3vw, 210px);
+        padding-right: 20px;
+      }
+      .header_nav ul {
+        li a{
+          text-transform: uppercase;
+        }
+      }
     }
   }
 }

@@ -11,23 +11,36 @@
     text-align: center;
     //police montserrat en gras en 900
     font-family: Montserrat, sans-serif;
-    font-size: 288px;
+    font-size: clamp(96px, 30vw, 288px);
     font-weight: 700;
     line-height: 250px;
     &__text {
       font-family: Montserrat, sans-serif;
       color: #FF6060;
-      font-size: 36px;
+      font-size: clamp(18px, 3vw, 36px);
     }
   }
   &__home {
     font-family: Montserrat, sans-serif;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 700;
     color: #FF6060;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+//768PX MEDIA QUERY
+@media (max-width: 768px) {
+  .error404 {
+    &__error {
+      &__text {
+        text-align: center;
+      }
+    }
+    &__home {
     }
   }
 }
