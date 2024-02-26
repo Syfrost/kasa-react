@@ -3,6 +3,8 @@
 .accommodation {
   width: 100%;
   max-width: 1440px;
+  padding: 0 100px 0 100px;
+  box-sizing: border-box;
   &__pictures {
     width: 100%;
     max-width: 1440px;
@@ -77,6 +79,7 @@
 
 @media screen and (max-width: 768px) {
   .accommodation {
+    padding: 0 20px 0 20px;
     .accommodation__info {
       display: flex;
       flex-direction: column;
