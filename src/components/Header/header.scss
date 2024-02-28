@@ -3,7 +3,7 @@ header {
   justify-content: center;
   width: 100%;
   margin-top: 40px;
-  padding: 0 25px 0 25px;
+  padding: 0 120px 0 120px;
   box-sizing: border-box;
   .header_container {
     display: flex;
@@ -44,9 +44,16 @@ header {
   }
 }
 
+//1024PX MEDIA QUERY
+@media (max-width: 1024px) {
+  header {
+    padding: 0 70px 0 70px;
+  }
+}
 //768PX MEDIA QUERY
 @media (max-width: 768px) {
   header {
+    padding: 0 40px 0 40px;
     .header_container {
       display: flex;
       justify-content: space-between;
